@@ -45,14 +45,27 @@
     <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
 
 </div>
+
+        <div class="form_group">
+            <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login " />
+        </div>
+        <br />
+        <div class="form_group">
+            <a href="signup.aspx"><input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Sign Up" /></a>
+</div>
        
     </div>
 </div>
+
+                       
                     </div>
 
                 </div>
 
+<a href="homepage.aspx"><< Back to Home</a><br>
+                <br />
             </div>
+
         </div>
     </div>
 </asp:Content>
