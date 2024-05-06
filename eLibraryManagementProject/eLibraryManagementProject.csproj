@@ -70,6 +70,7 @@
     <Content Include="adminauthormanagement.aspx" />
     <Content Include="adminlogin.aspx" />
     <Content Include="adminpublishermanagement.aspx" />
+    <Content Include="bookissuing.aspx" />
     <Content Include="books\b1.jpg" />
     <Content Include="books\b2.jpg" />
     <Content Include="books\b3.jpg" />
@@ -2206,6 +2207,13 @@
     </Compile>
     <Compile Include="adminpublishermanagement.aspx.designer.cs">
       <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="bookissuing.aspx.cs">
+      <DependentUpon>bookissuing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="bookissuing.aspx.designer.cs">
+      <DependentUpon>bookissuing.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
