@@ -50,7 +50,7 @@
                             <div class="col-md-6">
                                 <label>Contact Number</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Full Name" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" placeholder="Contact Number" TextMode="Number"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -116,7 +116,7 @@
                             <div class="col-md-6">
                                 <label>User ID</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="User ID" TextMode="Number"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="User ID"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">

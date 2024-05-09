@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -22,18 +23,29 @@ namespace eLibraryManagementProject
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            SignUpNewUser();
+        }
+
+        //user defined method
+
+        bool checkMemberExists()
+        {
+
+        }
+
+        void SignUpNewUser()
+        {
             //Response.Write("<script>alert('Testing');</script>");
 
             try
             {
                 SqlConnection con = new SqlConnection(strcon);
-                if (con.State == System.Data.ConnectionState.Closed)
+                if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO member_master_tbl(full_name,dob,contact_no,email,state,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con);
-
                 cmd.Parameters.AddWithValue("@full_name", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@dob", TextBox4.Text.Trim());
                 cmd.Parameters.AddWithValue("@contact_no", TextBox5.Text.Trim());
