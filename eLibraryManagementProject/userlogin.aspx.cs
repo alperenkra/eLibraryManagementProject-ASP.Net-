@@ -29,7 +29,7 @@ namespace eLibraryManagementProject
             {
                 SqlConnection con = new SqlConnection(strcon);
 
-                if (con.State == ConnectionState.Closed) ;
+                if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
