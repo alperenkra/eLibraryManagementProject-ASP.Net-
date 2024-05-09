@@ -65,7 +65,7 @@
                                         <asp:ListItem Text="German" Value="German" />
                                         <asp:ListItem Text="Spanish" Value="Spanish" />
                                     </asp:DropDownList>
-                                </div>
+                                </div>  
 
                                 <label>Publisher Name </label>
                                 <div class="form-group">
