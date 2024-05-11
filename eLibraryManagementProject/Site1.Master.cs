@@ -13,7 +13,7 @@ namespace eLibraryManagementProject
         {
             try
             {
-                if (Session["role"].Equals(""))
+                if (Session["role"] == null)
                 {
  
                     LinkButton1.Visible = true; // user login link button
@@ -44,6 +44,23 @@ namespace eLibraryManagementProject
                     LinkButton8.Visible = false; // book inventory link button
                     LinkButton9.Visible = false; // book issuing link button
                     LinkButton10.Visible = false; // member management link button
+                }
+                else if (Session["role"].Equals("admin"))
+                {
+
+                    LinkButton1.Visible = false; // user login link button
+                    LinkButton2.Visible = false; // sign up link button
+                    LinkButton3.Visible = true; // log out link button
+                    LinkButton7.Visible = true; // hello user link button
+                    LinkButton7.Text = "Hello Admin";
+
+                    LinkButton6.Visible = false; // admin login link button
+                    LinkButton11.Visible = true; // author management link button
+                    LinkButton12.Visible = true; // publisher management link button
+                    LinkButton8.Visible = true; // book inventory link button
+                    LinkButton9.Visible = true; // book issuing link button
+                    LinkButton10.Visible = true; // member management link button
+
                 }
             }
             catch (Exception ex)
@@ -101,7 +118,24 @@ namespace eLibraryManagementProject
 
         protected void LinkButton3_Click(object sender, EventArgs e)
         {
+            Session["username"] = "";
+            Session["fullname"] = "";
+            Session["role"] = "";
+            Session["status"] = "";
 
+            LinkButton1.Visible = true; // user login link button
+            LinkButton2.Visible = true; // sign up link button
+            LinkButton3.Visible = false; // log out link button
+            LinkButton7.Visible = false; // hello user link button
+
+            LinkButton6.Visible = true; // admin login link button
+            LinkButton11.Visible = false; // author management link button
+            LinkButton12.Visible = false; // publisher management link button
+            LinkButton8.Visible = false; // book inventory link button
+            LinkButton9.Visible = false; // book issuing link button
+            LinkButton10.Visible = false; // member management link button
+
+            Response.Redirect("homepage.aspx");
         }
     }
 }

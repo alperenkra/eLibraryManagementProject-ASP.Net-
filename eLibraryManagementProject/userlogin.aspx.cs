@@ -41,7 +41,7 @@ namespace eLibraryManagementProject
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('Login Successful');</script>");
+                       // Response.Write("<script>alert('Login Successful');</script>");
                         Session["username"] = dr.GetValue(8).ToString();
                         Session["fullname"] = dr.GetValue(0).ToString();
                         Session["role"] = "user";
