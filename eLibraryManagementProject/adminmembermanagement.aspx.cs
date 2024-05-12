@@ -11,6 +11,30 @@ namespace eLibraryManagementProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GridView1.DataBind();
+        }
+        
+        // Go Button
+        protected void LinkButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Active Button
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Pending Button
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Deactivate Button
+        protected void LinkButton3_Click(object sender, EventArgs e)
+        {
 
         }
     }

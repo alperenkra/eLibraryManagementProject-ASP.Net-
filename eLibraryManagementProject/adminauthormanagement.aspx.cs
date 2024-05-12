@@ -18,7 +18,7 @@ namespace eLibraryManagementProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GridView1.DataBind();
         }
         // add button click     
         protected void Button2_Click(object sender, EventArgs e)
@@ -68,10 +68,43 @@ namespace eLibraryManagementProject
         // go click button
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            getAuthorByID();        
         }
 
         // user defined function
+
+        void getAuthorByID()
+        {
+
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("SELECT * from author_master_tbl where author_id='" + TextBox1.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    TextBox2.Text = dt.Rows[0][1].ToString();
+                }
+                else
+                    Response.Write("<script>alert('Invalid Author ID ');</script>");
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
 
         void deleteAuthor()
         {
@@ -90,6 +123,8 @@ namespace eLibraryManagementProject
                 con.Close();
                 Response.Write("<script>alert('Author Deleted Successfully');</script>");
                 clearForm();
+                GridView1.DataBind();
+
 
             }
             catch (Exception ex)
@@ -116,6 +151,8 @@ namespace eLibraryManagementProject
                 con.Close();
                 Response.Write("<script>alert('Author Updated Successfully');</script>");
                 clearForm();
+                GridView1.DataBind();
+
 
             }
             catch (Exception ex)
@@ -143,7 +180,8 @@ namespace eLibraryManagementProject
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Author added Successfully');</script>");
-
+                clearForm();
+                GridView1.DataBind();
 
             }
             catch (Exception ex)
